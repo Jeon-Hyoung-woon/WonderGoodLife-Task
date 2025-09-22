@@ -1,0 +1,1015 @@
+/* CarDetailPage.css - 정리된 버전 */
+
+/* 기본 레이아웃 */
+.car-detail-page {
+  min-height: 100vh;
+  background-color: white;
+}
+
+.detail-content {
+  padding-top: 60px;
+}
+
+/* 헤더 영역 */
+.car-info-header-fixed {
+  position: sticky;
+  top: 60px;
+  background-color: white;
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.car-info-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.car-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.car-price-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.price-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-label {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.price-amount {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* 메인 콘텐츠 레이아웃 */
+.info-wrap {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.info-section {
+  flex: 2;
+  position: sticky;
+  top: 140px;
+  height: fit-content;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  overflow-x: visible;
+}
+
+.config-section {
+  flex: 1;
+  min-width: 350px;
+  position: sticky;
+  top: 140px;
+  height: fit-content;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+}
+
+/* 탭 네비게이션 */
+.tab-navigation {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.tab-button {
+  padding: 12px 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.tab-button.active {
+  color: #333;
+  border-bottom-color: #ff6b6b;
+}
+
+/* 차량 개요 */
+.vehicle-overview {
+  margin-bottom: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.car-image-section {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.car-brand-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 8px 12px;
+  border-radius: 20px;
+}
+
+.brand-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+}
+
+.detail-car-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.specs-table {
+  padding: 20px;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.spec-row:last-child {
+  border-bottom: none;
+}
+
+.spec-label {
+  font-weight: 500;
+  color: #666;
+}
+
+.spec-value {
+  color: #333;
+  font-weight: 600;
+}
+
+/* 상세 사양 정보 */
+.detailed-specs {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.spec-category {
+  margin-bottom: 30px;
+}
+
+.spec-category:last-child {
+  margin-bottom: 0;
+}
+
+.spec-category h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 15px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #3b82f6;
+}
+
+/* 트림별 사양 정보 스타일 */
+.spec-trim-selector {
+  background-color: #f8fafc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  border: 1px solid #e2e8f0;
+}
+
+.spec-trim-selector h3 {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.spec-trim-select {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.spec-trim-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.trim-basic-features {
+  margin-bottom: 40px;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.trim-basic-features::before {
+  content: "기본 품목";
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.trim-basic-features .spec-category {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.trim-basic-features .spec-category:last-child {
+  margin-bottom: 0;
+}
+
+.trim-basic-features .spec-category h4 {
+  color: #1e40af;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* 전용 특화 사양 스타일 */
+.trim-exclusive-features {
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid #f59e0b;
+  position: relative;
+}
+
+.trim-exclusive-features::before {
+  content: "GT 전용 특화 사양";
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.trim-exclusive-features .spec-category {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.trim-exclusive-features .spec-category:last-child {
+  margin-bottom: 0;
+}
+
+.trim-exclusive-features .spec-category h4 {
+  color: #92400e;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.trim-exclusive-features .spec-content {
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-left: none;
+}
+
+.trim-exclusive-features .spec-content p {
+  color: #451a03;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.spec-content {
+  background-color: #f8fafc;
+  border-radius: 6px;
+  padding: 15px;
+  border-left: 4px solid #3b82f6;
+}
+
+.spec-content p {
+  margin: 0;
+  line-height: 1.6;
+  color: #475569;
+  font-size: 14px;
+}
+
+.common-specs {
+  border-top: 2px solid #e2e8f0;
+  padding-top: 30px;
+}
+
+.common-specs h3 {
+  margin: 0 0 25px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* 옵션 섹션 */
+.additional-options {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: visible;
+}
+
+.options-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.options-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.options-count {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff6b6b;
+}
+
+.option-category {
+  margin-bottom: 20px;
+  overflow: visible;
+  position: relative;
+}
+
+.option-category h4 {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* 셀렉트 스타일 */
+.select-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.option-label-box {
+  min-width: 120px;
+  font-weight: 500;
+  color: #666;
+}
+
+.trim-select, .color-select, .tax-benefit-select {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* 옵션 카테고리 및 서브카테고리 */
+.option-subcategory {
+  margin-bottom: 20px;
+  overflow: visible;
+  position: relative;
+}
+
+.option-subcategory h5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.option-subcategory:first-child h5 {
+  padding-top: 12px;
+}
+
+/* 선택된 옵션 요약 */
+.selected-options-summary {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.options-header-with-reset {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.selected-options-summary h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.reset-options-button {
+  padding: 6px 12px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.reset-options-button:hover {
+  background-color: #c82333;
+}
+
+.selected-option-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  padding: 5px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.selected-option-item:last-child {
+  border-bottom: none;
+}
+
+.option-label {
+  font-weight: 500;
+  color: #666;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.option-value {
+  text-align: right;
+  color: #333;
+  flex-grow: 1;
+}
+
+.option-list {
+  text-align: right;
+}
+
+.option-list-item {
+  margin-bottom: 2px;
+  font-size: 13px;
+  color: #666;
+}
+
+.total-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px solid #333;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.total-label {
+  color: #333;
+}
+
+.total-value {
+  color: #ff6b6b;
+  font-size: 18px;
+}
+
+/* JSON 컨트롤 */
+.json-controls {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.json-button {
+  width: 100%;
+  padding: 12px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.json-button:hover {
+  opacity: 0.9;
+}
+
+.json-button.export {
+  background-color: #007bff;
+}
+
+.json-button.import {
+  background-color: #28a745;
+}
+
+.json-button.confirm {
+  background-color: #6c757d;
+}
+
+.json-display {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 15px;
+  margin-top: 15px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  white-space: pre-wrap;
+  max-height: 300px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .info-wrap {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+  }
+  
+  .info-section,
+  .config-section {
+    position: static;
+    max-height: none;
+    flex: none;
+    min-width: auto;
+  }
+  
+  .option-button {
+    padding: 12px;
+    min-height: 60px;
+  }
+  
+  .tab-navigation {
+    margin-bottom: 15px;
+  }
+  
+  .tab-button {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+}
+
+/* 로딩 상태 스타일 */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #4285f4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-container p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+/* 에러 상태 스타일 */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.error-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.error-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.error-container p {
+  font-size: 16px;
+  color: #666;
+  margin: 0 0 30px 0;
+  max-width: 400px;
+}
+
+.error-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.retry-button,
+.back-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 120px;
+}
+
+.retry-button {
+  background-color: #4285f4;
+  color: white;
+}
+
+.retry-button:hover {
+  background-color: #3367d6;
+}
+
+.back-button {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.back-button:hover {
+  background-color: #e9ecef;
+}
+
+/* 버튼 형식 옵션 스타일 */
+.option-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+  overflow: visible;
+}
+
+/* 휠 옵션 그리드 - 기본적으로 반응형, 단일 옵션일 때만 고정 너비 */
+.wheels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+  overflow: visible;
+}
+
+/* 단일 휠 옵션의 경우 - 반응형 대응 */
+.wheels-grid.single-wheel {
+  /* 창 모드에서는 100% 너비 사용 */
+  grid-template-columns: 1fr;
+  justify-content: start;
+}
+
+/* 전체 화면 모드에서만 고정 너비 적용 */
+@media (min-width: 1400px) {
+  .wheels-grid.single-wheel {
+    grid-template-columns: 353.16px;
+  }
+}
+
+.option-button {
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  width: 100%;
+  min-height: 70px;
+  display: block;
+  overflow: visible;
+}
+
+.option-button:hover {
+  border-color: #d1d5db;
+  background-color: #f3f4f6;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.option-button.selected {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.option-button.selected:hover {
+  border-color: #2563eb;
+  background-color: #dbeafe;
+}
+
+/* 비활성화된 옵션 스타일 */
+.option-button.disabled {
+  border-color: #e5e7eb;
+  background-color: #f3f4f6;
+  opacity: 0.8;
+  cursor: not-allowed;
+  pointer-events: auto; /* 툴팁이 표시되도록 변경 */
+}
+
+.option-button.disabled .option-name {
+  color: #9ca3af;
+}
+
+.option-button.disabled .option-price {
+  color: #9ca3af;
+}
+
+/* 비활성화된 옵션의 툴팁은 활성화 */
+.option-button.disabled .tooltip-container {
+  pointer-events: auto;
+  cursor: help;
+}
+
+.option-button.disabled .info-icon {
+  cursor: help;
+}
+
+/* 기본 포함된 옵션 스타일 */
+.option-button.included {
+  border-color: #10b981;
+  background-color: #ecfdf5;
+  box-shadow: 0 0 0 1px #10b981;
+  opacity: 0.8;
+  cursor: default;
+}
+
+.option-button.included:hover {
+  border-color: #059669;
+  background-color: #d1fae5;
+}
+
+/* 기본 포함된 옵션의 툴팁은 활성화 */
+.option-button.included .tooltip-container {
+  pointer-events: auto;
+  cursor: help;
+}
+
+.option-button.included .info-icon {
+  cursor: help;
+}
+
+.option-button.included .option-name {
+  color: #047857;
+  font-weight: 600;
+}
+
+.option-button.included .option-price {
+  color: #059669;
+  font-weight: 600;
+}
+
+/* 기본 포함 배지 */
+.included-badge {
+  background-color: #10b981;
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+/* 옵션 컨텐츠 레이아웃 */
+.option-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+}
+
+.option-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.option-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.option-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #374151;
+  margin: 0;
+}
+
+.option-button.selected .option-name {
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.option-price {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+  text-align: right;
+  margin-top: 4px;
+}
+
+.option-button.selected .option-price {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* 툴팁 스타일 */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.info-icon {
+  font-size: 14px;
+  color: #9ca3af;
+  cursor: help;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.info-icon:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 125%;
+  left: -132px;
+  transform: translateX(-50%);
+  background-color: #1f2937;
+  color: white;
+  text-align: left;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  width: 320px;
+  min-height: 60px;
+  transition: opacity 0.3s, visibility 0.3s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 32px;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #1f2937 transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+  .select-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .option-label-box {
+    min-width: auto;
+  }
+  
+  .trim-select, .color-select, .tax-benefit-select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .option-buttons-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .option-button {
+    padding: 12px;
+    min-height: 60px;
+  }
+  
+  .option-button .option-name {
+    font-size: 14px;
+  }
+  
+  .option-button .option-price {
+    font-size: 13px;
+  }
+}

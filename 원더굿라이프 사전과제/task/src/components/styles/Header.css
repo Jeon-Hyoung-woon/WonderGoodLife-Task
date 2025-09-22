@@ -1,0 +1,134 @@
+/* Header.css - 정리된 버전 */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #4285f4;
+  color: white;
+  z-index: 1000;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  max-width: 1830px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 24px;
+}
+
+.header-left,
+.header-center,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  gap: 20px;
+}
+
+/* 로고 */
+.logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.logo-subtitle {
+  font-size: 11px;
+  color: #e3f2fd;
+  margin-top: -2px;
+}
+
+/* 내비게이션 */
+.main-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 0;
+  position: relative;
+  transition: font-weight 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  font-weight: 500;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: white;
+}
+
+/* 헤더 링크 */
+.header-link {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: text-decoration 0.2s;
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}
+
+.header-separator {
+  color: #e3f2fd;
+  font-size: 12px;
+}
+
+/* 메뉴 버튼 */
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+}
+
+.hamburger-line {
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.menu-button:hover .hamburger-line {
+  background-color: #e3f2fd;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 15px;
+  }
+  
+  .header-center .main-nav,
+  .header-right .header-link,
+  .header-separator {
+    display: none;
+  }
+}

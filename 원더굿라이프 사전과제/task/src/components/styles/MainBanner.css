@@ -1,0 +1,93 @@
+.main-banner {
+  margin-top: 60px; /* Header height offset */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 60px 20px;
+  position: relative;
+}
+
+.banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.banner-text {
+  flex: 1;
+  max-width: 400px;
+}
+
+.banner-text h1 {
+  font-size: 32px;
+  font-weight: 300;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+
+.banner-text h2 {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.banner-image {
+  flex: 1;
+  text-align: center;
+}
+
+.banner-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.banner-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+  background-color: white;
+}
+
+.indicator:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .banner-text h1 {
+    font-size: 24px;
+  }
+  
+  .banner-text h2 {
+    font-size: 36px;
+  }
+  
+  .main-banner {
+    padding: 40px 20px;
+  }
+}
